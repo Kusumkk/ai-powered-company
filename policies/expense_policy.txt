@@ -1,0 +1,5 @@
+Company Expense Reimbursement Policy
+Employees can claim reimbursement for approved business travel and work-related expenses.
+Claims must be submitted within 30 calendar days of the expense date.
+Original receipts or valid digital invoices are mandatory.
+Any single expense above INR 5,000 requires manager approval before reimbursement.

@@ -1,0 +1,5 @@
+Employee Onboarding Policy
+New employees must complete identity verification and submit required documents before receiving production system access.
+IT provisions a company laptop and standard application access after HR confirms onboarding completion.
+Production database access requires separate approval from the employee's manager and the IT security team.
+Interns are not automatically eligible for production database access.

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f7f5" />
+  <title>Policy Desk — Company policy assistant</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+    :root{--ink:#18231e;--muted:#718078;--green:#247655;--green2:#e9f4ed;--line:#e8ece9;--paper:#fff;--bg:#f5f7f5;--orange:#ad762b;--orangebg:#faf3e7;--shadow:0 14px 44px rgba(28,48,37,.055)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px 'DM Sans',sans-serif;min-height:100vh}button,input{font:inherit}button{cursor:pointer} .shell{max-width:1440px;margin:auto;min-height:100vh;display:grid;grid-template-columns:248px minmax(0,1fr);background:var(--paper)}
+    aside{background:#fbfcfb;border-right:1px solid var(--line);padding:27px 17px;display:flex;flex-direction:column;min-height:100vh}.brand{display:flex;gap:11px;align-items:center;padding:0 9px 30px}.brandmark{height:34px;width:34px;border-radius:11px;background:#237552;color:#fff;display:grid;place-items:center;font:800 17px Manrope;box-shadow:0 5px 12px #23755230}.brand-name{font:800 15px Manrope;letter-spacing:-.5px}.brand-caption{font-size:10px;color:var(--muted);margin-top:2px}.nav-label{padding:10px 10px 9px;color:#9aa49e;text-transform:uppercase;letter-spacing:1.15px;font-weight:700;font-size:9px}.nav-item{height:38px;border:0;background:transparent;color:#5d6b63;display:flex;align-items:center;gap:10px;padding:0 11px;border-radius:8px;text-align:left;width:100%;font-size:12px;margin:1px 0}.nav-item.active{color:var(--green);background:#eaf3ed;font-weight:700}.nav-item svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.7}.nav-item .count{margin-left:auto;font-size:10px;color:#9ca7a0}.side-docs{margin-top:2px}.doc-link{display:flex;align-items:center;gap:8px;padding:9px 10px;font-size:11px;color:#65736a;line-height:1.3}.doc-ico{width:22px;height:25px;border:1px solid #dce6de;border-radius:5px;color:var(--green);background:#fff;display:grid;place-items:center;font-size:9px;font-weight:700}.sidebar-bottom{margin-top:auto;padding:12px 10px 0}.privacy{border:1px solid var(--line);border-radius:10px;padding:12px 11px;background:white}.privacy-head{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:700}.dot{height:7px;width:7px;background:#51a576;border-radius:50%;box-shadow:0 0 0 3px #e9f4ed}.privacy p{font-size:10px;line-height:1.55;color:var(--muted);margin:8px 0 0}
+    main{min-width:0;display:flex;flex-direction:column;min-height:100vh}.topbar{height:65px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 39px}.breadcrumb{font-size:11px;color:#97a29b}.breadcrumb b{color:#44544b;font-weight:600}.topright{display:flex;align-items:center;gap:17px;color:#89958d;font-size:11px}.topbadge{border:1px solid var(--line);border-radius:20px;padding:6px 10px;color:#67756c;background:#fff;font-size:10px}.avatar{width:28px;height:28px;border-radius:50%;background:#e7eee9;color:#41624d;display:grid;place-items:center;font-size:10px;font-weight:700}
+    .content{max-width:1000px;width:100%;margin:0 auto;padding:54px 46px 34px;display:flex;flex-direction:column;flex:1}.eyebrow{display:flex;align-items:center;gap:7px;color:var(--green);font-weight:700;font-size:10px;letter-spacing:1.05px;text-transform:uppercase}.eyebrow svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.7}h1{font:800 clamp(30px,4vw,41px) Manrope;letter-spacing:-1.8px;margin:12px 0 8px;line-height:1.12}.subhead{font-size:13px;line-height:1.7;color:#7b8880;margin:0}.intro{margin-bottom:27px}.chat-area{flex:1;display:flex;flex-direction:column;justify-content:flex-end;min-height:250px}.welcome{display:flex;align-items:flex-start;gap:12px;margin:0 0 19px 2px}.bot-avatar{width:31px;height:31px;border-radius:10px;background:var(--green2);color:var(--green);display:grid;place-items:center;flex:none}.bot-avatar svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8}.welcome-card{font-size:12px;color:#516158;line-height:1.65;padding:10px 14px;border:1px solid var(--line);border-radius:3px 12px 12px 12px;background:#fff;max-width:580px}.welcome-card strong{font-weight:700;color:#33453a}.conversation{display:flex;flex-direction:column;gap:17px;margin:0 0 18px}.user-row{display:flex;justify-content:flex-end}.user-bubble{background:#edf4ef;border:1px solid #e4eee7;color:#365344;padding:10px 14px;border-radius:12px 12px 3px 12px;max-width:78%;font-size:12px;line-height:1.55}.answer-row{display:flex;gap:11px;align-items:flex-start}.answer-block{min-width:0;max-width:690px}.answer-text{font-size:13px;color:#33433a;line-height:1.75;padding:9px 0 6px}.answer-text p{margin:0 0 8px}.answer-text strong{color:#1f3026}.answer-text .abstain{color:#795c2a}.sources-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#95a198;font-weight:700;margin:6px 0 7px}.source-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}.source-card{border:1px solid var(--line);border-radius:8px;padding:9px 10px;background:#fff;min-width:0}.source-top{display:flex;align-items:center;gap:7px;margin-bottom:5px}.file-tag{border-radius:4px;background:#eef5ef;color:#35714e;padding:3px 5px;font-size:9px;font-weight:700}.source-name{font-size:10px;font-weight:700;color:#47574c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.source-section{font-size:9px;color:#98a39b;margin-left:auto;white-space:nowrap}.source-quote{font-size:10px;color:#718078;line-height:1.5}.no-sources{border:1px dashed #e4e7df;border-radius:8px;background:#fffdf8;padding:10px 12px;color:#8a7656;font-size:10px;line-height:1.55;max-width:520px}
+    .composer-wrap{margin-top:22px}.suggest-label{font-size:10px;color:#96a199;margin:0 0 9px 2px}.suggestions{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:13px}.suggest{border:1px solid #e6ebe7;background:#fff;border-radius:20px;padding:7px 11px;color:#69776e;font-size:10px;transition:.15s}.suggest:hover{border-color:#a9cbb4;color:var(--green);background:#f8fcf9}.composer{border:1px solid #dfe6e0;border-radius:12px;display:flex;align-items:flex-end;gap:10px;padding:10px 11px 10px 15px;box-shadow:0 5px 20px #18362008;background:white;transition:.2s}.composer:focus-within{border-color:#92baa0;box-shadow:0 0 0 3px #e9f4ed}.composer textarea{resize:none;border:0;outline:0;flex:1;min-height:24px;max-height:100px;color:#304037;font:12px 'DM Sans';line-height:1.6;padding:3px 0}.composer textarea::placeholder{color:#a6b0a9}.send{border:0;background:var(--green);color:white;border-radius:8px;width:34px;height:34px;display:grid;place-items:center;transition:.15s;flex:none}.send:hover{background:#195d40;transform:translateY(-1px)}.send:disabled{opacity:.45;cursor:not-allowed;transform:none}.send svg{height:16px;width:16px;stroke:currentColor;fill:none;stroke-width:1.8}.composer-note{font-size:9px;color:#9ba59e;text-align:center;margin:9px 0 0}.composer-note span{color:#648571}.footer{display:flex;justify-content:space-between;border-top:1px solid #f0f2f0;margin-top:28px;padding-top:13px;color:#a0aaa3;font-size:9px}.footer b{font-weight:600;color:#77857b}
+    @media(max-width:800px){.shell{grid-template-columns:1fr}aside{display:none}.content{padding:38px 25px 26px}.topbar{padding:0 25px}.chat-area{min-height:230px}}@media(max-width:520px){.content{padding:30px 17px 22px}.topbar{padding:0 17px;height:55px}.topbadge{display:none}h1{font-size:32px}.source-list{grid-template-columns:1fr}.user-bubble{max-width:88%}.footer{font-size:8px}.suggest{font-size:9px;padding:7px 9px}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <aside>
+    <div class="brand"><div class="brandmark">P</div><div><div class="brand-name">Policy Desk</div><div class="brand-caption">Your company, clearly.</div></div></div>
+    <div class="nav-label">WORKSPACE</div>
+    <button class="nav-item active" aria-current="page"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 5.5v15M8 7h8M8 11h7"/></svg>Ask a policy question</button>
+    <button class="nav-item" id="browseBtn"><svg viewBox="0 0 24 24"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10l2 2h5.5A2.5 2.5 0 0 1 20 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5z"/><path d="M4 9h16"/></svg>Policy library <span class="count">03</span></button>
+    <div class="nav-label" style="margin-top:22px">CONNECTED SOURCES</div>
+    <div class="side-docs">
+      <div class="doc-link"><span class="doc-ico">TXT</span><span>Leave policy</span></div>
+      <div class="doc-link"><span class="doc-ico">TXT</span><span>Expense policy</span></div>
+      <div class="doc-link"><span class="doc-ico">TXT</span><span>Onboarding policy</span></div>
+    </div>
+    <div class="sidebar-bottom"><div class="privacy"><div class="privacy-head"><span class="dot"></span>Grounded in your policies</div><p>Answers are based only on the 3 connected documents. If a detail isn't covered, we'll say so.</p></div></div>
+  </aside>
+  <main>
+    <header class="topbar"><div class="breadcrumb">Workspace&nbsp; / &nbsp;<b>Policy assistant</b></div><div class="topright"><span class="topbadge">3 policy documents</span><span>Help center</span><div class="avatar">JD</div></div></header>
+    <section class="content">
+      <div class="intro"><div class="eyebrow"><svg viewBox="0 0 24 24"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.64 5.64l2.12 2.12m8.48 8.48 2.12 2.12m0-12.72-2.12 2.12m-8.48 8.48-2.12 2.12"/><circle cx="12" cy="12" r="5"/></svg>COMPANY KNOWLEDGE</div><h1>Ask your policies.</h1><p class="subhead">Clear answers from the documents that guide your workplace.</p></div>
+      <div class="chat-area" id="chatArea">
+        <div class="welcome"><div class="bot-avatar"><svg viewBox="0 0 24 24"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.64 5.64l2.12 2.12m8.48 8.48 2.12 2.12m0-12.72-2.12 2.12m-8.48 8.48-2.12 2.12"/><circle cx="12" cy="12" r="5"/></svg></div><div class="welcome-card"><strong>Hi, I’m your policy assistant.</strong> Ask me about leave, expenses, or onboarding. I’ll show you the policy section behind every answer.</div></div>
+        <div class="conversation" id="conversation" aria-live="polite"></div>
+      </div>
+      <div class="composer-wrap"><p class="suggest-label">A few things you can ask</p>
+        <div class="suggestions"><button class="suggest">How much annual leave do I get?</button><button class="suggest">When should I submit an expense claim?</button><button class="suggest">Can interns access the production database?</button></div>
+        <form class="composer" id="askForm"><textarea id="question" rows="1" aria-label="Your policy question" placeholder="Ask a question about your company policies…"></textarea><button class="send" id="sendBtn" type="submit" aria-label="Send question"><svg viewBox="0 0 24 24"><path d="m4 12 16-8-5 16-3-7zM12 13l4-4"/></svg></button></form>
+        <p class="composer-note"><span>✦</span> Answers are generated from approved policy documents only</p>
+      </div>
+      <div class="footer"><span><b>Policy Desk</b> &nbsp;·&nbsp; Internal knowledge assistant</span><span>Sources updated when documents change</span></div>
+    </section>
+  </main>
+</div>
+<script>
+  const input=document.getElementById('question'), send=document.getElementById('sendBtn');
+  function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  async function addQuestion(q){
+    send.disabled=true;
+    const row=document.createElement('div');
+    row.innerHTML=`<div class="user-row"><div class="user-bubble">${esc(q)}</div></div><div class="answer-row"><div class="bot-avatar"><svg viewBox="0 0 24 24"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.64 5.64l2.12 2.12m8.48 8.48 2.12 2.12m0-12.72-2.12 2.12m-8.48 8.48-2.12 2.12"/><circle cx="12" cy="12" r="5"/></svg></div><div class="answer-block"><div class="answer-text">Looking through the policy documents…</div></div></div>`;
+    document.getElementById('conversation').appendChild(row);row.scrollIntoView({behavior:'smooth',block:'nearest'});
+    try{
+      const response=await fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q})});
+      const data=await response.json();if(!response.ok)throw new Error(data.error||'The question could not be answered.');
+      const block=row.querySelector('.answer-block');
+      block.innerHTML=`<div class="answer-text"><p>${esc(data.answer)}</p><p style="font-size:9px;color:#95a198">Answer mode: ${esc(data.mode)}</p></div>${data.sources.length?`<div class="sources-label">Retrieved sources</div><div class="source-list">${data.sources.map(s=>`<div class="source-card"><div class="source-top"><span class="file-tag">TXT</span><span class="source-name">${esc(s.doc)}</span><span class="source-section">${esc(s.section)} · line ${s.line}</span></div><div class="source-quote">“${esc(s.text)}”</div></div>`).join('')}</div>`:`<div class="no-sources">No supporting passage was retrieved from the supplied policy documents.</div>`}`;
+      row.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }catch(error){row.querySelector('.answer-block').innerHTML=`<div class="no-sources">${esc(error.message)} Make sure the Policy Desk server is running, then try again.</div>`;}
+    finally{send.disabled=false;}
+  }
+  input.addEventListener('input',()=>{input.style.height='auto';input.style.height=Math.min(input.scrollHeight,100)+'px';});
+  document.getElementById('askForm').addEventListener('submit',e=>{e.preventDefault();const q=input.value.trim();if(!q)return;input.value='';input.style.height='auto';addQuestion(q);input.focus();});
+  document.querySelectorAll('.suggest').forEach(b=>b.addEventListener('click',()=>{input.value=b.textContent;document.getElementById('askForm').requestSubmit();}));
+  document.getElementById('browseBtn').addEventListener('click',()=>{document.querySelector('.side-docs').scrollIntoView({behavior:'smooth',block:'center'});document.querySelector('.side-docs').style.background='#f0f7f2';setTimeout(()=>document.querySelector('.side-docs').style.background='',1200);});
+</script>
+</body>
+</html>
